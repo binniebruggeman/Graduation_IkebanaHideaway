@@ -11,7 +11,7 @@ int nrOfPomodoros = 0;          //number of pomodoros done
 bool shortBreak = false;
 bool longBreak = false;  //if nr of pomodoros done is 4, then timeForLongBreak is true
 bool pomodoro = true;
-bool startPomodoro = true; //to turn on first pomodoro
+//bool startPomodoro = true; //to turn on first pomodoro
 
 void setup()
 {
@@ -24,23 +24,6 @@ void loop()
   // check to see if it's time to change the state of the LED
   unsigned long currentMillis = millis();
 
-  ////1st POMODORO
-  //  if (startPomodoro == true) {
-  //    ledState = HIGH;
-  //    }
-
-//  if ((pomodoro == true) && (currentMillis - previousMillis <= pomodoroTime)) {
-//    ledState = HIGH;
-//    previousMillis = currentMillis;  // Remember the time
-//    digitalWrite(ledPin, ledState);  // Update the actual LED
-//  }
-////  } else {
-////    ledState = LOW;
-////    previousMillis = currentMillis;  // Remember the time
-////    digitalWrite(ledPin, ledState);  // Update the actual LED
-////  }
-
-
   //SHORT BREAK
   if ((shortBreak ==  false) && (longBreak == false) && (currentMillis - previousMillis >= pomodoroTime) && (nrOfPomodoros < 4)) {
     //startPomodoro = false;
@@ -50,7 +33,6 @@ void loop()
     previousMillis = currentMillis;  // Remember the time
     digitalWrite(ledPin, ledState);  // Update the actual LED
   }
-
 
   //LONG BREAK
   if ((shortBreak ==  false) && (currentMillis - previousMillis >= pomodoroTime) && (nrOfPomodoros == 4)) {
@@ -84,7 +66,6 @@ void loop()
     digitalWrite(ledPin, ledState);  // Update the actual LED
   }
 
-  //  if ((pomodoro == true) && (currentMillis - previousMillis >= pomodoroTime))
 
   //    if ((ledState == HIGH) && (currentMillis - previousMillis >= OnTime))
   //    {
