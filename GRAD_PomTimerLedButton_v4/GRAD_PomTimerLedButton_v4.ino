@@ -48,7 +48,7 @@ void loop()
   }
 
   //FIRST POMODORO
-   if ((startPomodoro == true) && (shortBreak ==  false) && (longBreak == false) && (currentMillis - previousMillis <= pomodoroTime) && (nrOfPomodoros == 0)) {
+  if ((startPomodoro == true) && (shortBreak ==  false) && (longBreak == false) && (currentMillis - previousMillis <= pomodoroTime) && (nrOfPomodoros == 0)) {
     ledState = HIGH;
     previousMillis = currentMillis;  // Remember the time
     digitalWrite(ledPin, ledState);  // Update the actual LED
